@@ -1,0 +1,56 @@
+{ // Prerequisite :
+  // - Install VS2019(v142)
+  //
+  "version": "2.0.0",
+  "runner": "terminal",
+  "options": {
+  },
+  "tasks": [
+    {
+      "label": "build_debug_sample",
+      "command": "${config:v142}",
+      "args": [ 
+        "/p:Configuration=Debug;Platform=x64;PlatformToolset=v142", "hello.sln"
+      ],
+      "presentation": {
+        "echo": true,
+        "reveal": "always"
+      },
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+        "label": "generate_googletest",
+        "type":"shell",
+        "command": "if not exist x64\\Debug mkdir x64\\Debug && cmake -Hsrc\\thirdparty\\googletest -Bx64\\Debug"
+    },
+    {
+        "label": "build_debug_googletest",
+        "command": "${config:v142}",
+        "args": [ 
+          "/p:Configuration=Debug;Platform=x64;PlatformToolset=v142", "x64\\Debug\\googletest\\gtest.sln"
+        ],
+        "presentation": {
+          "echo": true,
+          "reveal": "always"
+        },
+        "problemMatcher": "$msCompile",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+          "label": "build_debug_all",
+          "dependsOrder": "sequence",
+          "dependsOn": [
+              "generate_googletest",
+              "build_debug_googletest",
+              "build_debug_sample"
+          ]
+      }
+  ]
+}

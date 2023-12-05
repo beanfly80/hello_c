@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\sample\sample_doc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\sample\sample_doc_title.h" />
+    <ClInclude Include="src\sample\shared.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="gtest">
+      <UniqueIdentifier>{f14c5cb1-12da-46fb-8c85-76b61fe02532}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
