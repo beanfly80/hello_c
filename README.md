@@ -1,6 +1,6 @@
 # hello_c
 
-c/c++ console test app with gtest
+c/c++ test console app with gtest
 
 ### Directory & Files
 ```
@@ -12,14 +12,13 @@ c/c++ console test app with gtest
         +- shared.hpp           // utilities
     +- thirdparty
         +- googletest
-+- hello.sln                    // ignore file list
-
++- hello.sln
 ```
 
 ### Prerequisite
 
 - Windows only
-- VSCode ==> Use this IDE
+- VSCode (Use this IDE)
 - MSVC2019
     - C++ 17 should be supported.
     - Verify that v142 toolchain path in .vscode\settings.json
@@ -31,11 +30,11 @@ c/c++ console test app with gtest
     ```
     +- .vscode/
     +- src/
-    +- x64/Debug/
+    +- x64/Debug/           // out directory
         +- lib/gtest.lib
-        +- hello.exe
+        +- hello.exe        // executable file
     ```
-
+------
 ### How to add [gtest](https://google.github.io/googletest)
 - [License](src\thirdparty\googletest\LICENSE)
 - get code
